@@ -24,7 +24,6 @@ pokemon %>% ggplot(aes(x = ataque_especial)) + geom_histogram()
 
 pokemon %>% ggplot(aes(x = ataque_especial)) + geom_density()
 
-# Abrindo a base de dados 
 library(ISLR)
 
 # Séries Temporais
