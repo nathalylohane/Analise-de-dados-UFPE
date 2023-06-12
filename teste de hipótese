@@ -1,0 +1,9 @@
+pacman::p_load("data.table")
+
+ReceitasRecife <- read.csv2("http://dados.recife.pe.gov.br/dataset/b0653677-2153-4085-829d-3f61540491eb/resource/ab95f23c-9a07-4226-9672-f183fc244393/download/recife-dados-receitas-2022.csv", sep = ";", encoding = "UTF-8")
+
+# LEITURA PARA TESTE DE FREQUÊNCIAS 
+
+chisq.test(ReceitasRecife$categoria_receita_codigo, ReceitasRecife$orgao_codigo)
+# H0: variáveis são independentes / não há associação. p-valor (p-value) > 0.05
+# H1: variáveis são dependentes / há associação. p-valor (p-value) <= 0.05
