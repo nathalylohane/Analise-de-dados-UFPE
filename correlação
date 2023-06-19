@@ -1,0 +1,23 @@
+# CORRELAÇÃO COM R 
+# Carregando os pacotes
+pacman::p_load(corrplot, dplyr, ggplot2, devtools)
+
+# Carregando a base
+pokemon <- basesCursoR::pegar_base("pokemon")
+dplyr::glimpse(pokemon)
+View(pokemon)
+
+# Base de Dados Pokemon sem as variáveis categóricas 
+pokemon2 <- pokemon %>% select(altura, peso, ataque, ataque_especial, defesa, defesa_especial) 
+View(pokemon2) 
+
+# Tabela de correlação com as variáveis selecionadas
+cor(pokemon2)
+
+# Gráfico de dispersão com as variáveis selecionadas
+pairs(pokemon2)
+
+# Corrplot 
+PokemonCor <- cor(pokemon2)
+corrplot(PokemonCor, method = "number", order = 'alphabet')
+corrplot(PokemonCor, order = 'alphabet') 
